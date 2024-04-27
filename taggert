@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+rg -H \
+  -e "^module \S*" \
+  -e "^type \S*" \
+  -e "^data \S*"  \
+  -e "^class .*" \
+  -e "^newtype \S*" \
+  -e "^[a-z][A-Za-z0-9]+( ::|$)" \
+  ${@:-.spago/**/*.purs lib/**/*.purs} \
+  | python3 taggert.py
