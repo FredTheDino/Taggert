@@ -28,5 +28,6 @@ def main():
         [file, line] = info[:-1].split(":", maxsplit=1)
         print_tags_line(file, line, line)
 
-if __name__ == "__MAIN__":
+
+if __name__ == '__main__':
     main()
